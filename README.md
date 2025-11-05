@@ -3,7 +3,7 @@
 This is my setup for the notetaking app [Obsidian](https://obsidian.md/), using the [Cuptertino](https://github.com/aaaaalexis/obsidian-cupertino) theme and some personal custom tweaks.
 
 - [Plugins](https://github.com/uthoffcyra/celsus-obsidian/blob/main/plugins.md)
-- More pages coming soon?
+- [CSS Classes](https://github.com/uthoffcyra/celsus-obsidian/blob/main/cssclasses.md)
 
 ## Screenshots
 
