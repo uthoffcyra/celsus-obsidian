@@ -1,6 +1,32 @@
 
 /* === ✦ === library of celsus === ✦ === */
 
+/* 
+
+MIT License
+
+Copyright (c) 2025 Cyra Uthoff
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+*/
+
 body {
 
     /* basic variables */
@@ -31,41 +57,44 @@ body {
 
 }
 
+/* header 1 */
 h1, .inline-title {
-    border-bottom: 1px solid var(--hr-color) !important;
+    border-bottom: 1px solid var(--modal-border-color) !important;
     border-radius: 6px 6px 0 0 !important;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+    width: 100%;
 }
 .inline-title:not([data-level]):not(:focus-within):hover {
     background-color: unset !important;
 }
 
+/* header 3 */
 h3 {
     margin-top: calc(var(--p-spacing) * 1.5) !important;
 }
 
+/* increase blur */
 .modal {
     backdrop-filter: var(--blur-m) !important;
 }
 
+/* navigation spacing */
 .nav-header {
     padding-top: 6px !important;
 }
 
-.inline-title, h1 {
-    padding-bottom: 8px;
-    border-bottom: solid 1px var(--modal-border-color);
-    margin-bottom: 24px;
-    width: 100%;
-}
-
+/* link colors */
 a.internal-link {
     color: #b0c4be !important;
 }
 
+/* inline spoilers */
 .inline_spoilers-spoiler:not(.inline_spoilers-revealed) {
     cursor: default !important;
 }
 
+/* callout spacing */
 .callout-content {
     margin-top: 6px;
 }
@@ -76,6 +105,7 @@ a.internal-link {
     border: none;
     backdrop-filter: none;
     padding: 0 !important;
+    box-shadow: none;
 
     & .callout-title {
         display: none;
@@ -212,6 +242,9 @@ div.empty-state-action-list {
 }
 .nav-files-container > div > div:has(.nav-folder-title[data-path^="Daily Notes"]) {
     --local-folder-color: var(--celsus-folder-6) !important;
+}
+.nav-files-container > div > div:has(.nav-folder-title[data-path^="Scrapbook"]) {
+    --local-folder-color: var(--celsus-folder-7) !important;
 }
 
 /* remove external link icon */
