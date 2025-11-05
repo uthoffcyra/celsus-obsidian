@@ -1,0 +1,275 @@
+
+/* === ✦ === library of celsus === ✦ === */
+
+body {
+
+    /* basic variables */
+    --bold-color: #c5e96d;
+    --italic-color: #fbbb83;
+	--blockquote-border-color: #92b8af11;
+    --blockquote-border-thickness: 3px;
+    --nav-item-background-active: #d7d7d711 !important;
+    --hr-thickness: 1px;
+    --hr-color: var(--modal-border-color);
+    --h1-size: 1.55em;
+    --h2-size: 1.30em;
+    --obsidian-columns-padding: 0px 0px;
+    --nav-item-background-active: #00000030;
+
+    /* custom celsus variables */
+    --celsus-files-top-margin: 100px;
+    --celsus-liquid-glass-shadow: var(--shadow-xs);
+    --celsus-liquid-glass-bg: var(--background-primary);
+
+	/* --hr-thickness: 1px; */
+	/* --obsidian-columns-padding: 0; */
+	/* --graph-line: #add2c23a; */
+
+    --celsus-folder-1: #d4c685;
+	--celsus-folder-2: #f7ef81;
+	--celsus-folder-3: #cfe795;
+	--celsus-folder-4: #a7d3a6;
+	--celsus-folder-5: #add2c2;
+	--celsus-folder-6: #8ed6d9;
+	--celsus-folder-7: #aad0ef;
+
+}
+
+h3 {
+    margin-top: calc(var(--p-spacing) * 1.5) !important;
+}
+
+.modal {
+    backdrop-filter: var(--blur-m) !important;
+}
+
+.nav-header {
+    padding-top: 6px !important;
+}
+
+.inline-title, h1 {
+    padding-bottom: 8px;
+    border-bottom: solid 1px var(--modal-border-color);
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+a.internal-link {
+    color: #b0c4be !important;
+}
+
+.inline_spoilers-spoiler:not(.inline_spoilers-revealed) {
+    cursor: default !important;
+}
+
+.callout-content {
+    margin-top: 6px;
+}
+
+/* custom columns */
+.callout[data-callout="celsus-col"] {
+    --callout-color: transparent;
+    border: none;
+    backdrop-filter: none;
+    padding: 0 !important;
+
+    & .callout-title {
+        display: none;
+    }
+
+    & .callout-content {
+        /* create grid */
+        display: grid;
+        grid-template-columns: 30% auto;
+        gap: 20px;
+        margin-left: 0 !important;
+
+        & h2 { margin-top: 4px; }
+        & button {
+            margin-bottom: 1px; margin-left: -4px;
+            background-color: #2e2e2e !important;
+            width: 24px;
+            padding: 0 !important;
+
+            &:hover {
+                outline: solid 1px #4e4e4e;
+            }
+        }
+        & button, & code { padding: 0; }
+
+        /* remove spacing */
+        & > * { margin: 0; }
+        & > [dir=auto] { margin-block-start: 0px !important; }
+    }
+}
+
+/* tabs */
+.mod-root  {
+    & .workspace-tab-header-container {
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        z-index: 1;
+    }
+    & .workspace-tab-header {
+        background-color: #26262689;
+        backdrop-filter: var(--blur-s);
+        border: solid 1px var(--modal-border-color) !important;
+    }
+}
+body:not(.is-phone) .workspace .mod-root .workspace-tab-header-new-tab, body:not(.is-phone) .workspace .mod-root .workspace-tab-header-tab-list {
+    display: flex !important;
+}
+
+/* hide view header */
+body:not(.is-mobile) .workspace-leaf-content:not([data-type=kanban]) {
+    & .view-header-title-container > *, & .view-actions, & .view-header-left {
+        display: none;
+    }
+}
+
+/* status bar */
+.status-bar {
+    bottom: 6px !important;
+    right: 6px !important;
+    background-color: #2f2f2f11;
+}
+
+/* new tab */
+div.empty-state-action-list {
+    width: 200px;
+    & > div {
+        display: none !important;
+    }
+}
+.workspace-leaf-content[data-type=empty] .empty-state-action-list::before {
+    height: 120px;
+}
+
+/* colored folders */
+.nav-files-container > div > .tree-item.nav-folder {
+
+    border-radius: 16px;
+    transition: background-color 0.2s, border-color 0.5s;
+    border: solid 1px transparent;
+
+    --local-folder-color: #395e66;
+    
+    &.is-collapsed {
+        --nav-item-color: color-mix(
+            in srgb,
+            var(--local-folder-color) 80%,
+            #000
+        );
+        --nav-item-color-hover: color-mix(
+            in srgb,
+            var(--local-folder-color) 80%,
+            #fff
+        );
+    }
+
+    &:not(.is-collapsed) {
+        transition: background-color 0.2s, border-color 0.2s;
+        background-color: color-mix(
+            in srgb, 
+            var(--local-folder-color) 30%, 
+            #000
+        );
+        /* box-shadow: var(--celsus-liquid-glass-shadow); */
+        box-shadow: 0px 0px 100px inset color-mix(
+            in srgb,
+            var(--local-folder-color) 40%,
+            #1a1a1a
+        );
+        border: solid 1px color-mix(
+            in srgb, 
+            var(--local-folder-color) 15%, 
+            var(--modal-border-color)
+        );
+    }
+
+    .tree-item-icon.collapse-icon {
+        opacity: 0.3;
+    }
+}
+.nav-files-container > div > div:has(.nav-folder-title[data-path^="Directory"]) {
+    --local-folder-color: var(--celsus-folder-1) !important;
+}
+.nav-files-container > div > div:has(.nav-folder-title[data-path^="Global"]) {
+    --local-folder-color: var(--celsus-folder-2) !important;
+}
+.nav-files-container > div > div:has(.nav-folder-title[data-path^="Writing"]) {
+    --local-folder-color: var(--celsus-folder-3) !important;
+}
+.nav-files-container > div > div:has(.nav-folder-title[data-path^="Projects"]) {
+    --local-folder-color: var(--celsus-folder-4) !important;
+}
+.nav-files-container > div > div:has(.nav-folder-title[data-path^="University"]) {
+    --local-folder-color: var(--celsus-folder-5) !important;
+}
+.nav-files-container > div > div:has(.nav-folder-title[data-path^="Daily Notes"]) {
+    --local-folder-color: var(--celsus-folder-6) !important;
+}
+.nav-files-container > div > div:has(.nav-folder-title[data-path^="Scrapbook"]) {
+    --local-folder-color: var(--celsus-folder-7) !important;
+}
+
+/* remove external link icon */
+.external-link {
+	background-image: none;
+	padding-inline-end: 0;
+}
+
+
+
+/* ==!== custom css classes ==!== */
+
+/* cssclasses: hide-title */
+.hide-title {
+    .inline-title {
+        display: none;
+    }
+}
+
+/* csssubclasses: boxlinks */
+.boxlinks a:not(.tag):only-child, a.boxlink {
+	display: block;
+	border: solid 1px var(--hr-color);
+	padding: 12px;
+    margin: 25px 0 0 0 !important;
+	border-radius: var(--radius-m);
+	text-decoration: none !important;
+	font-size: calc(var(--font-text-size) + 2px);
+}
+
+/* csssubclasses: fullwidth */
+.full-width .markdown-preview-sizer {
+	--file-line-width: 1000px;
+}
+
+/* cssclasses: colorless */
+.colorless em, .colorless strong {
+	color: var(--text-normal);
+}
+
+/* cssclasses: justify */
+.justify > * {
+	text-align: justify;
+}
+
+/* css-class: ao3-font */
+.ao3-font {
+	--bold-color: #9f0707;
+	h1, .inline-title {
+		font-family: Georgia, serif !important;
+	}
+	p {
+		font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Helvetica, sans-serif !important;
+	}
+	blockquote b, blockquote strong {
+		font-family: Georgia, serif !important;
+		font-size: 18px;
+	}
+	.cm-line {
+		font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Helvetica, sans-serif !important;
+	}
+}
