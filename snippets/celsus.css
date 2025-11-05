@@ -31,6 +31,14 @@ body {
 
 }
 
+h1, .inline-title {
+    border-bottom: 1px solid var(--hr-color) !important;
+    border-radius: 6px 6px 0 0 !important;
+}
+.inline-title:not([data-level]):not(:focus-within):hover {
+    background-color: unset !important;
+}
+
 h3 {
     margin-top: calc(var(--p-spacing) * 1.5) !important;
 }
