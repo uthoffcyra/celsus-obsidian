@@ -4,6 +4,7 @@ This is my setup for the notetaking app [Obsidian](https://obsidian.md/), using 
 
 - [Plugins](https://github.com/uthoffcyra/celsus-obsidian/blob/main/plugins.md)
 - [CSS Classes](https://github.com/uthoffcyra/celsus-obsidian/blob/main/cssclasses.md)
+- [Custom Column](https://github.com/uthoffcyra/celsus-obsidian/blob/main/celsus-col.md)
 
 ## Screenshots
 
