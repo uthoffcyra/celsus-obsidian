@@ -2,6 +2,9 @@
 
 This is my setup for the notetaking app [Obsidian](https://obsidian.md/), using the [Cuptertino](https://github.com/aaaaalexis/obsidian-cupertino) theme and some personal custom tweaks.
 
+- [Plugins](https://github.com/uthoffcyra/celsus-obsidian/blob/main/plugins.md)
+- More pages coming soon?
+
 ## Screenshots
 
 <img width="2870" height="1884" alt="20251104 20 35 50@2x" src="https://github.com/user-attachments/assets/421525f5-81a4-4256-9014-819b2187a719" />
